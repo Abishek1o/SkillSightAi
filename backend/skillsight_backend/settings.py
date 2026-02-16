@@ -149,6 +149,7 @@ CORS_ALLOWED_ORIGINS = os.environ.get(
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
+    CSRF_TRUSTED_ORIGINS = ['https://skillsight-ai-73a75.web.app']
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True

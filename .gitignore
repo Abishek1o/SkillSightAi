@@ -27,6 +27,9 @@ ENV/
 logs/
 *.log
 
+# Firebase
+.firebase/
+
 # Recursive matches
 **/__pycache__/
 **/*.py[cod]
