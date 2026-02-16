@@ -45,7 +45,8 @@ class Command(BaseCommand):
                     skill_name=skill,
                     resource_name=data['resource'],
                     link=data['link'],
-                    resource_type=data['type']
+                    resource_type=data['type'],
+                    difficulty_level=data.get('difficulty', 'Beginner')
                 )
                 count += 1
             self.stdout.write(self.style.SUCCESS(f'Successfully loaded {count} learning resources.'))

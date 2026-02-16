@@ -21,6 +21,11 @@ class LearningResource(models.Model):
     resource_name = models.CharField(max_length=200)
     link = models.URLField(max_length=500)
     resource_type = models.CharField(max_length=50, choices=resource_type_choices)
+    difficulty_level = models.CharField(max_length=20, default='Beginner', choices=[
+        ('Beginner', 'Beginner'),
+        ('Intermediate', 'Intermediate'),
+        ('Advanced', 'Advanced'),
+    ])
 
     def __str__(self):
         return f"{self.skill_name} - {self.resource_name}"

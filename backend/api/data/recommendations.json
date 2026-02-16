@@ -1,102 +1,284 @@
 {
     "Python": {
-        "resource": "Scientific Computing with Python",
-        "link": "https://www.freecodecamp.org/learn/scientific-computing-with-python/",
-        "type": "Course"
+        "resource": "Python for Everybody Specialization (Coursera)",
+        "link": "https://www.coursera.org/specializations/python",
+        "type": "Certification",
+        "difficulty": "Beginner"
     },
     "JavaScript": {
-        "resource": "JavaScript Algorithms and Data Structures",
+        "resource": "JavaScript Algorithms and Data Structures (freeCodeCamp)",
         "link": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
-        "type": "Course"
+        "type": "Certification",
+        "difficulty": "Beginner"
     },
     "React": {
-        "resource": "Front End Development Libraries",
-        "link": "https://www.freecodecamp.org/learn/front-end-development-libraries/",
-        "type": "Course"
+        "resource": "Meta Front-End Developer Professional Certificate (Coursera)",
+        "link": "https://www.coursera.org/professional-certificates/meta-front-end-developer",
+        "type": "Certification",
+        "difficulty": "Intermediate"
     },
     "Node.js": {
-        "resource": "Back End Development and APIs",
+        "resource": "Back End Development and APIs (freeCodeCamp)",
         "link": "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
-        "type": "Course"
+        "type": "Certification",
+        "difficulty": "Intermediate"
+    },
+    "Express": {
+        "resource": "Building a Website with Node.js and Express.js (LinkedIn Learning)",
+        "link": "https://www.linkedin.com/learning/building-a-website-with-node-js-and-express-js-3",
+        "type": "Course",
+        "difficulty": "Intermediate"
+    },
+    "MongoDB": {
+        "resource": "MongoDB Associate Developer Path (MongoDB University)",
+        "link": "https://learn.mongodb.com/learning-paths/mongodb-associate-developer",
+        "type": "Certification",
+        "difficulty": "Beginner"
     },
     "SQL": {
-        "resource": "Learn SQL Basics for Data Science (Coursera)",
-        "link": "https://www.coursera.org/learn/sql-for-data-science",
-        "type": "Course"
+        "resource": "Google Data Analytics Professional Certificate (Coursera)",
+        "link": "https://www.coursera.org/professional-certificates/google-data-analytics",
+        "type": "Certification",
+        "difficulty": "Beginner"
     },
     "Git": {
-        "resource": "Version Control with Git (Udacity/Coursera)",
-        "link": "https://www.coursera.org/learn/version-control-with-git",
-        "type": "Course"
+        "resource": "Version Control with Git (Udacity)",
+        "link": "https://www.udacity.com/course/version-control-with-git--ud123",
+        "type": "Course",
+        "difficulty": "Beginner"
+    },
+    "REST API": {
+        "resource": "APIs and Microservices (freeCodeCamp)",
+        "link": "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
+        "type": "Certification",
+        "difficulty": "Intermediate"
     },
     "Docker": {
-        "resource": "Docker for Beginners (FreeCodeCamp - YouTube)",
-        "link": "https://www.youtube.com/watch?v=fqMOX6JJhGo",
-        "type": "Tutorial"
-    },
-    "Kubernetes": {
-        "resource": "Introduction to Kubernetes (edX)",
-        "link": "https://www.edx.org/course/introduction-to-kubernetes",
-        "type": "Course"
+        "resource": "Introduction to Containers w/ Docker (Coursera)",
+        "link": "https://www.coursera.org/learn/docker-container",
+        "type": "Course",
+        "difficulty": "Intermediate"
     },
     "AWS": {
-        "resource": "AWS Cloud Practitioner Essentials (Amazon)",
+        "resource": "AWS Cloud Practitioner Essentials (AWS Training)",
         "link": "https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/",
-        "type": "Course"
+        "type": "Course",
+        "difficulty": "Beginner"
     },
     "HTML": {
-        "resource": "Responsive Web Design",
+        "resource": "Responsive Web Design Certification (freeCodeCamp)",
         "link": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
-        "type": "Course"
+        "type": "Certification",
+        "difficulty": "Beginner"
     },
     "CSS": {
-        "resource": "Responsive Web Design",
+        "resource": "Responsive Web Design Certification (freeCodeCamp)",
         "link": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
-        "type": "Course"
+        "type": "Certification",
+        "difficulty": "Beginner"
     },
     "Machine Learning": {
-        "resource": "Machine Learning by Andrew Ng (Coursera)",
+        "resource": "Machine Learning Specialization (Coursera/Stanford)",
         "link": "https://www.coursera.org/specializations/machine-learning-introduction",
-        "type": "Course"
+        "type": "Certification",
+        "difficulty": "Intermediate"
     },
     "Data Visualization": {
-        "resource": "Data Visualization with Python (FreeCodeCamp)",
-        "link": "https://www.freecodecamp.org/learn/data-analysis-with-python/",
-        "type": "Course"
+        "resource": "Google Data Analytics Professional Certificate (Coursera)",
+        "link": "https://www.coursera.org/professional-certificates/google-data-analytics",
+        "type": "Certification",
+        "difficulty": "Intermediate"
     },
     "Cybersecurity": {
-        "resource": "Introduction to Cybersecurity (Cisco Networking Academy)",
-        "link": "https://www.netacad.com/courses/cybersecurity/introduction-cybersecurity",
-        "type": "Course"
+        "resource": "Google Cybersecurity Professional Certificate (Coursera)",
+        "link": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+        "type": "Certification",
+        "difficulty": "Beginner"
     },
     "Networking": {
-        "resource": "Computer Networking (Georgia Tech - Udacity)",
-        "link": "https://www.udacity.com/course/computer-networking--ud436",
-        "type": "Course"
+        "resource": "Networking Basics (Cisco Networking Academy)",
+        "link": "https://www.netacad.com/courses/networking/networking-basics",
+        "type": "Course",
+        "difficulty": "Beginner"
     },
     "Linux": {
-        "resource": "Introduction to Linux (edX)",
+        "resource": "Introduction to Linux (edX/Linux Foundation)",
         "link": "https://www.edx.org/course/introduction-to-linux",
-        "type": "Course"
+        "type": "Course",
+        "difficulty": "Beginner"
     },
     "Django": {
-        "resource": "Django for Everybody (Coursera)",
+        "resource": "Django for Everybody Specialization (Coursera)",
         "link": "https://www.coursera.org/specializations/django",
-        "type": "Course"
+        "type": "Certification",
+        "difficulty": "Intermediate"
+    },
+    "Flask": {
+        "resource": "Python and Flask Bootcamp (Udemy)",
+        "link": "https://www.udemy.com/course/python-and-flask-bootcamp-create-websites-using-flask/",
+        "type": "Course",
+        "difficulty": "Intermediate"
     },
     "Ethical Hacking": {
-        "resource": "TryHackMe - Jr Penetration Tester",
-        "link": "https://tryhackme.com/path/outline/jr-penetration-tester",
-        "type": "Practice"
+        "resource": "IBM Cybersecurity Analyst Professional Certificate (Coursera)",
+        "link": "https://www.coursera.org/professional-certificates/ibm-cybersecurity-analyst",
+        "type": "Certification",
+        "difficulty": "Intermediate"
     },
     "TensorFlow": {
-        "resource": "TensorFlow Developer Certificate (Coursera)",
+        "resource": "DeepLearning.AI TensorFlow Developer (Coursera)",
         "link": "https://www.coursera.org/professional-certificates/tensorflow-in-practice",
-        "type": "Certification"
+        "type": "Certification",
+        "difficulty": "Advanced"
     },
     "Scikit-learn": {
-        "resource": "Machine Learning with Python (FreeCodeCamp)",
+        "resource": "Machine Learning with Python (freeCodeCamp)",
         "link": "https://www.freecodecamp.org/learn/machine-learning-with-python/",
-        "type": "Course"
+        "type": "Certification",
+        "difficulty": "Intermediate"
+    },
+    "Figma": {
+        "resource": "Figma Essential Training (LinkedIn Learning)",
+        "link": "https://www.linkedin.com/learning/figma-essential-training-the-basics",
+        "type": "Course",
+        "difficulty": "Beginner"
+    },
+    "Adobe XD": {
+        "resource": "Adobe XD Essential Training (LinkedIn Learning)",
+        "link": "https://www.linkedin.com/learning/adobe-xd-essential-training-design",
+        "type": "Course",
+        "difficulty": "Beginner"
+    },
+    "Azure": {
+        "resource": "Microsoft Azure Fundamentals AZ-900 (Microsoft Learn)",
+        "link": "https://learn.microsoft.com/en-us/certifications/azure-fundamentals/",
+        "type": "Certification",
+        "difficulty": "Beginner"
+    },
+    "Jenkins": {
+        "resource": "Jenkins Essential Training (LinkedIn Learning)",
+        "link": "https://www.linkedin.com/learning/jenkins-essential-training",
+        "type": "Course",
+        "difficulty": "Intermediate"
+    },
+    "Terraform": {
+        "resource": "HashiCorp Certified: Terraform Associate (HashiCorp)",
+        "link": "https://developer.hashicorp.com/terraform/tutorials/certification-003",
+        "type": "Certification",
+        "difficulty": "Intermediate"
+    },
+    "Accessibility": {
+        "resource": "Introduction to Web Accessibility (edX/W3C)",
+        "link": "https://www.edx.org/course/web-accessibility-introduction",
+        "type": "Course",
+        "difficulty": "Beginner"
+    },
+    "Pandas": {
+        "resource": "Data Analysis with Python (freeCodeCamp)",
+        "link": "https://www.freecodecamp.org/learn/data-analysis-with-python/",
+        "type": "Certification",
+        "difficulty": "Intermediate"
+    },
+    "NumPy": {
+        "resource": "Data Analysis with Python (freeCodeCamp)",
+        "link": "https://www.freecodecamp.org/learn/data-analysis-with-python/",
+        "type": "Certification",
+        "difficulty": "Beginner"
+    },
+    "Matplotlib": {
+        "resource": "Data Analysis with Python (freeCodeCamp)",
+        "link": "https://www.freecodecamp.org/learn/data-analysis-with-python/",
+        "type": "Certification",
+        "difficulty": "Intermediate"
+    },
+    "Statistics": {
+        "resource": "Introduction to Statistics (Stanford/Coursera)",
+        "link": "https://www.coursera.org/learn/stanford-statistics",
+        "type": "Course",
+        "difficulty": "Beginner"
+    },
+    "Jupyter Notebook": {
+        "resource": "Tools for Data Science (IBM/Coursera)",
+        "link": "https://www.coursera.org/learn/open-source-tools-for-data-science",
+        "type": "Course",
+        "difficulty": "Beginner"
+    },
+    "BASH": {
+        "resource": "Linux Command Line Basics (Udacity)",
+        "link": "https://www.udacity.com/course/linux-command-line-basics--ud595",
+        "type": "Course",
+        "difficulty": "Beginner"
+    },
+    "Kubernetes": {
+        "resource": "Architecting with Google Kubernetes Engine (Coursera)",
+        "link": "https://www.coursera.org/specializations/architecting-google-kubernetes-engine",
+        "type": "Certification",
+        "difficulty": "Advanced"
+    },
+    "CI/CD": {
+        "resource": "Continuous Delivery & DevOps (Coursera)",
+        "link": "https://www.coursera.org/learn/uva-darden-continous-delivery-devops",
+        "type": "Course",
+        "difficulty": "Intermediate"
+    },
+    "Penetration Testing": {
+        "resource": "Ethical Hacking Essentials (LinkedIn Learning)",
+        "link": "https://www.linkedin.com/learning/ethical-hacking-overview",
+        "type": "Course",
+        "difficulty": "Intermediate"
+    },
+    "Cryptography": {
+        "resource": "Cryptography I (Stanford/Coursera)",
+        "link": "https://www.coursera.org/learn/crypto",
+        "type": "Course",
+        "difficulty": "Advanced"
+    },
+    "Risk Assessment": {
+        "resource": "Cybersecurity Risk Management (Coursera)",
+        "link": "https://www.coursera.org/learn/cybersecurity-risk-management",
+        "type": "Course",
+        "difficulty": "Intermediate"
+    },
+    "Sketch": {
+        "resource": "Sketch Essential Training (LinkedIn Learning)",
+        "link": "https://www.linkedin.com/learning/sketch-essential-training-the-basics",
+        "type": "Course",
+        "difficulty": "Beginner"
+    },
+    "Prototyping": {
+        "resource": "UX Design: Prototyping (LinkedIn Learning)",
+        "link": "https://www.linkedin.com/learning/ux-design-7-prototyping",
+        "type": "Course",
+        "difficulty": "Intermediate"
+    },
+    "User Research": {
+        "resource": "User Research and Design (Coursera)",
+        "link": "https://www.coursera.org/learn/design-research",
+        "type": "Course",
+        "difficulty": "Beginner"
+    },
+    "Wireframing": {
+        "resource": "UX Foundations: Wireframing (LinkedIn Learning)",
+        "link": "https://www.linkedin.com/learning/ux-foundations-wireframing",
+        "type": "Course",
+        "difficulty": "Beginner"
+    },
+    "Unit Testing": {
+        "resource": "Unit Testing in Python (LinkedIn Learning)",
+        "link": "https://www.linkedin.com/learning/unit-testing-in-python",
+        "type": "Course",
+        "difficulty": "Intermediate"
+    },
+    "Firewalls": {
+        "resource": "IT Security: Defense against the digital dark arts (Coursera)",
+        "link": "https://www.coursera.org/learn/it-security",
+        "type": "Course",
+        "difficulty": "Intermediate"
+    },
+    "Security Information and Event Management (SIEM)": {
+        "resource": "Splunk Fundamentals 1 (Splunk Education)",
+        "link": "https://www.splunk.com/en_us/training/free-courses/splunk-fundamentals-1.html",
+        "type": "Course",
+        "difficulty": "Intermediate"
     }
 }

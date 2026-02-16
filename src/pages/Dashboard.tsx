@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Brain, TrendingUp, Target, Award, Clock, ArrowRight, BarChart3, BookOpen, Trash2, Share2, Download } from 'lucide-react';
+import { Brain, TrendingUp, Target, Award, Clock, ArrowRight, BarChart3, Trash2, Share2, Download } from 'lucide-react';
 import { AnalysisHistory } from '../types';
 
 interface DashboardData {
@@ -151,15 +151,15 @@ export default function Dashboard() {
     : dashboardData?.recommended_skills || [];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
                 Welcome back, {user?.name}!
               </h1>
-              <p className="text-gray-600 mt-1">Here's your skill development overview</p>
+              <p className="text-gray-600 dark:text-gray-400 mt-1">Here's your skill development overview</p>
             </div>
             <button
               onClick={() => navigate('/analyze')}
@@ -175,32 +175,32 @@ export default function Dashboard() {
           {statsList.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-200 hover:scale-105"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-200 hover:scale-105 animate-slide-up"
             >
               <div className="flex items-center justify-between mb-4">
                 <div className={`w-12 h-12 ${stat.bgColor} rounded-xl flex items-center justify-center`}>
                   <stat.icon className={`w-6 h-6 ${stat.iconColor}`} />
                 </div>
               </div>
-              <h3 className="text-gray-600 text-sm font-medium mb-1">{stat.title}</h3>
-              <p className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</p>
-              <p className="text-sm text-gray-500">{stat.change}</p>
+              <h3 className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-1">{stat.title}</h3>
+              <p className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">{stat.value}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">{stat.change}</p>
             </div>
           ))}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          <div className="lg:col-span-2 bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 transition-colors duration-300">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                <BarChart3 className="w-6 h-6 text-indigo-600" />
+              <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                <BarChart3 className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                 Recent Analyses
               </h2>
               <div className="flex items-center gap-4">
                 {selectedAnalysisId && (
                   <button
                     onClick={(e) => handleDeleteAnalysis(e, selectedAnalysisId)}
-                    className="text-red-600 hover:text-red-700 font-medium text-sm flex items-center gap-1 transition-colors"
+                    className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium text-sm flex items-center gap-1 transition-colors"
                   >
                     <Trash2 className="w-4 h-4" />
                     Delete Selected
@@ -208,7 +208,7 @@ export default function Dashboard() {
                 )}
                 <button
                   onClick={() => handleViewResults(selectedAnalysisId || (recentAnalyses[0]?.id))}
-                  className="text-indigo-600 hover:text-indigo-700 font-medium text-sm flex items-center gap-1 transition-colors"
+                  className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium text-sm flex items-center gap-1 transition-colors"
                   disabled={recentAnalyses.length === 0}
                 >
                   View Full Results
@@ -222,25 +222,25 @@ export default function Dashboard() {
                   <div
                     key={analysis.id}
                     className={`flex items-center justify-between p-4 rounded-xl transition-all cursor-pointer border ${(String(selectedAnalysisId) === String(analysis.id) || (!selectedAnalysisId && analysis === recentAnalyses[0]))
-                      ? 'bg-indigo-50 border-indigo-200 shadow-md transform scale-[1.01]'
-                      : 'bg-gray-50 border-transparent hover:bg-gray-100'
+                      ? 'bg-indigo-50 dark:bg-indigo-900/30 border-indigo-200 dark:border-indigo-700 shadow-md transform scale-[1.01]'
+                      : 'bg-gray-50 dark:bg-gray-700/50 border-transparent hover:bg-gray-100 dark:hover:bg-gray-700'
                       }`}
                     onClick={() => handleAnalysisClick(analysis.id)}
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 flex items-center justify-center rounded-xl ${(String(selectedAnalysisId) === String(analysis.id) || (!selectedAnalysisId && analysis === recentAnalyses[0])) ? 'bg-indigo-600 text-white' : 'bg-white text-indigo-600 shadow-sm'
+                      <div className={`w-12 h-12 flex items-center justify-center rounded-xl ${(String(selectedAnalysisId) === String(analysis.id) || (!selectedAnalysisId && analysis === recentAnalyses[0])) ? 'bg-indigo-600 text-white' : 'bg-white dark:bg-gray-600 text-indigo-600 dark:text-indigo-400 shadow-sm'
                         }`}>
                         <Brain className="w-6 h-6" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-gray-900">{analysis.jobTitle}</h3>
-                        <p className="text-sm text-gray-500">{analysis.date}</p>
+                        <h3 className="font-bold text-gray-900 dark:text-gray-100">{analysis.jobTitle}</h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{analysis.date}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-6">
                       <div className="text-right">
-                        <p className="text-2xl font-bold text-indigo-600">{analysis.matchPercentage}%</p>
-                        <p className="text-[10px] text-gray-500 uppercase font-semibold">Match Score</p>
+                        <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{analysis.matchPercentage}%</p>
+                        <p className="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-semibold">Match Score</p>
                       </div>
                       <div className="flex items-center gap-2">
                         <button
@@ -259,13 +259,13 @@ export default function Dashboard() {
                         </button>
                         <button
                           onClick={(e) => handleDeleteAnalysis(e, analysis.id)}
-                          className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all"
+                          className="p-2 text-gray-400 dark:text-gray-500 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg transition-all"
                           title="Delete Analysis"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
                       </div>
-                      <ArrowRight className={`w-5 h-5 transition-transform ${(String(selectedAnalysisId) === String(analysis.id) || (!selectedAnalysisId && analysis === recentAnalyses[0])) ? 'text-indigo-600 translate-x-1' : 'text-gray-300'
+                      <ArrowRight className={`w-5 h-5 transition-transform ${(String(selectedAnalysisId) === String(analysis.id) || (!selectedAnalysisId && analysis === recentAnalyses[0])) ? 'text-indigo-600 dark:text-indigo-400 translate-x-1' : 'text-gray-300 dark:text-gray-600'
                         }`} />
                     </div>
                   </div>
@@ -275,10 +275,10 @@ export default function Dashboard() {
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <BarChart3 className="w-8 h-8 text-gray-400" />
                   </div>
-                  <p className="text-gray-500 mb-4">No recent analyses found</p>
+                  <p className="text-gray-500 dark:text-gray-400 mb-4">No recent analyses found</p>
                   <button
                     onClick={() => navigate('/analyze')}
-                    className="bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-all"
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-semibold transition-all transform hover:scale-105"
                   >
                     Start your first analysis
                   </button>
@@ -287,19 +287,19 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 flex flex-col">
-            <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <Target className="w-6 h-6 text-green-600" />
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 flex flex-col transition-colors duration-300">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+              <Target className="w-6 h-6 text-green-600 dark:text-green-400" />
               Recommended Skills
             </h2>
             <div className="space-y-3 flex-1">
               {recommendationsToDisplay.slice(0, 6).map((skill, index) => (
                 <div
                   key={index}
-                  className="p-3 bg-gradient-to-r from-gray-50 to-indigo-50 rounded-xl border border-gray-200"
+                  className="p-3 bg-gradient-to-r from-gray-50 to-indigo-50 dark:from-gray-700 dark:to-indigo-900/30 rounded-xl border border-gray-200 dark:border-gray-600 transition-all hover:scale-105 duration-200"
                 >
                   <div className="flex items-center justify-between mb-1">
-                    <h3 className="font-semibold text-gray-900 text-sm">{skill.name}</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">{skill.name}</h3>
                     <span
                       className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase ${skill.priority === 'High'
                         ? 'bg-red-100 text-red-700'
@@ -309,18 +309,18 @@ export default function Dashboard() {
                       {skill.priority}
                     </span>
                   </div>
-                  <p className="text-[10px] text-gray-500">{skill.category}</p>
+                  <p className="text-[10px] text-gray-500 dark:text-gray-400">{skill.category}</p>
                 </div>
               ))}
               {recommendationsToDisplay.length === 0 && (
-                <p className="text-sm text-gray-500 text-center py-8 italic">
+                <p className="text-sm text-gray-500 dark:text-gray-400 text-center py-8 italic">
                   Select an analysis to see recommendations
                 </p>
               )}
             </div>
             <button
               onClick={() => handleViewResults(selectedAnalysisId || (recentAnalyses[0]?.id))}
-              className="w-full mt-6 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold py-3 rounded-xl transition-all border border-indigo-100 flex items-center justify-center gap-2"
+              className="w-full mt-6 bg-indigo-50 dark:bg-indigo-900/30 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 text-indigo-700 dark:text-indigo-400 font-semibold py-3 rounded-xl transition-all border border-indigo-100 dark:border-indigo-800 flex items-center justify-center gap-2"
               disabled={recommendationsToDisplay.length === 0}
             >
               View All Recommendations

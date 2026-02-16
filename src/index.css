@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Smooth transitions for theme switching */
+  * {
+    @apply transition-colors duration-300;
+  }
+  
+  /* Dark mode color scheme */
+  :root {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f9fafb;
+    --color-text-primary: #111827;
+    --color-text-secondary: #6b7280;
+  }
+  
+  .dark {
+    --color-bg-primary: #1f2937;
+    --color-bg-secondary: #111827;
+    --color-text-primary: #f9fafb;
+    --color-text-secondary: #d1d5db;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Glassmorphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .glass {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
 @media print {
   .no-print {
     display: none !important;

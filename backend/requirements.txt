@@ -6,3 +6,5 @@ pypdf
 python-docx
 dj-database-url
 gunicorn
+whitenoise
+python-dotenv

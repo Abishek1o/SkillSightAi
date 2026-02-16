@@ -75,7 +75,10 @@ class SkillAnalysisView(APIView):
             career_obj = Career.objects.get(title__iexact=target_role)
             try:
                 required_skills = json.loads(career_obj.required_skills)
-            except:
+                if not isinstance(required_skills, list):
+                    required_skills = [required_skills] if required_skills else []
+            except (json.JSONDecodeError, TypeError) as e:
+                 print(f"Error decoding required_skills for {target_role}: {e}")
                  required_skills = []
         except Career.DoesNotExist:
             available_roles = Career.objects.values_list('title', flat=True)
@@ -127,13 +130,16 @@ class SkillAnalysisView(APIView):
 
         # 5. Save to History if Firebase UID is provided
         if firebase_uid:
-            UserAnalysis.objects.create(
-                firebase_uid=firebase_uid,
-                role=career_obj.title,
-                match_percentage=match_percentage,
-                skills_count=len(user_skills_list),
-                missing_skills=json.dumps(missing_skills)
-            )
+            try:
+                UserAnalysis.objects.create(
+                    firebase_uid=firebase_uid,
+                    role=career_obj.title,
+                    match_percentage=match_percentage,
+                    skills_count=len(user_skills_list),
+                    missing_skills=json.dumps(missing_skills)
+                )
+            except Exception as e:
+                print(f"Error saving analysis to DB: {e}")
 
         # 6. Generate Recommendations from DB
         recommendations = []
@@ -148,15 +154,17 @@ class SkillAnalysisView(APIView):
                     "skill": skill,
                     "resource": rec_obj.resource_name,
                     "link": rec_obj.link,
-                    "type": rec_obj.resource_type
+                    "type": rec_obj.resource_type,
+                    "difficulty": rec_obj.get_difficulty_level_display()
                 })
             else:
-                # Default "Search" recommendation if not found in DB
+                # Fallback to FreeCodeCamp for unexpected skills
                 recommendations.append({
                     "skill": skill,
-                    "resource": "General Search",
-                    "link": f"https://www.google.com/search?q=learn+{skill}+free+course",
-                    "type": "Search"
+                    "resource": "FreeCodeCamp Courses",
+                    "link": f"https://www.freecodecamp.org/learn",
+                    "type": "Course",
+                    "difficulty": "Beginner"
                 })
 
         # 7. Construct Response
@@ -255,14 +263,16 @@ class AnalysisDetailView(APIView):
                         "skill": skill,
                         "resource": rec_obj.resource_name,
                         "link": rec_obj.link,
-                        "type": rec_obj.resource_type
+                        "type": rec_obj.resource_type,
+                        "difficulty": rec_obj.get_difficulty_level_display()
                     })
                 else:
                     recommendations.append({
                         "skill": skill,
                         "resource": "General Search",
                         "link": f"https://www.google.com/search?q=learn+{skill}+free+course",
-                        "type": "Search"
+                        "type": "Search",
+                        "difficulty": "Beginner"
                     })
 
             # Fetch target role matching skills to get "matched" count and list
