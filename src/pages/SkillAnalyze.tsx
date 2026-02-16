@@ -35,16 +35,21 @@ export default function SkillAnalyze() {
         body: formDataUpload,
       });
 
-      const data = await response.json();
-
       if (response.ok) {
+        const data = await response.json();
         setFormData({ ...formData, resumeText: data.text });
       } else {
-        setUploadError(data.error || 'Failed to parse resume');
+        // Try to get JSON error, fallback to status text
+        try {
+          const data = await response.json();
+          setUploadError(data.error || `Server error (${response.status})`);
+        } catch {
+          setUploadError(`Server returned an error (${response.status}). Check if the file is too large.`);
+        }
       }
     } catch (error) {
       console.error('Error uploading file:', error);
-      setUploadError('Error connecting to the parsing service.');
+      setUploadError('Connection refused. Please check your internet or try again in a moment.');
     } finally {
       setIsParsing(false);
     }

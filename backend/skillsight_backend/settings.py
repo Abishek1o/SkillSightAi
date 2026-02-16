@@ -139,11 +139,8 @@ STORAGES = {
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS Configuration
-# Restrict this to your specific frontend URL in production
-CORS_ALLOWED_ORIGINS = os.environ.get(
-    'CORS_ALLOWED_ORIGINS', 
-    'http://localhost:5173,http://127.0.0.1:5173,https://skillsight-ai-73a75.web.app'
-).split(',')
+cors_allowed = os.environ.get('CORS_ALLOWED_ORIGINS', 'https://skillsight-ai-73a75.web.app')
+CORS_ALLOWED_ORIGINS = [origin.strip() for origin in cors_allowed.split(',')]
 
 # Security Settings for Production
 if not DEBUG:
